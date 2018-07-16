@@ -21,14 +21,14 @@ env = Environment(
   loader=FileSystemLoader(searchpath=path)
 )
 
-template_files = glob.glob('*.j2')
+template_files = glob.glob(os.path.join(path, '*.j2'))
 print(template_files)
 
 for tf in template_files:
-  template = env.get_template(tf)
+  print("template: " + tf)
+  template = env.get_template(os.path.basename(tf))
   out_file = re.sub('\.j2$', '', tf)
   print("Writing file: " + os.path.join(path, out_file))
-  print(template.render(env=os.environ))
 
   with open(os.path.join(path, out_file), 'w') as f:
     f.write(template.render(env=os.environ))

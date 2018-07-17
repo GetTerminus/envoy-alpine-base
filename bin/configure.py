@@ -24,10 +24,9 @@ env = Environment(
 template_files = glob.glob(os.path.join(path, '*.j2'))
 
 for tf in template_files:
-  print("template: " + tf)
   template = env.get_template(os.path.basename(tf))
   out_file = re.sub('\.j2$', '', tf)
-  print("Writing file: " + os.path.join(path, out_file))
 
+  print("Writing file: " + os.path.join(path, out_file))
   with open(os.path.join(path, out_file), 'w') as f:
     f.write(template.render(env=os.environ))

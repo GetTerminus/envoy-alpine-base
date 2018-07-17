@@ -22,7 +22,6 @@ env = Environment(
 )
 
 template_files = glob.glob(os.path.join(path, '*.j2'))
-print(template_files)
 
 for tf in template_files:
   print("template: " + tf)

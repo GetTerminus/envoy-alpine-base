@@ -9,7 +9,8 @@ RUN apk --no-cache add \
  && pip install --upgrade \
     pip \
     setuptools \
- && easy_install supervisor
+ && easy_install supervisor \
+ && easy_install Jinja2
 
 # copy the config files for envoy, and the startup files for supervisord
 COPY etc/ /etc/

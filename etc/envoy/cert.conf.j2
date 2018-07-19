@@ -1,0 +1,13 @@
+[req]
+default_bits = 4096
+prompt = no
+default_md = sha256
+distinguished_name = dn
+[dn]
+C = US
+ST = Georgia
+L = Atlanta
+O = Terminus Software Inc.
+OU = SRE
+emailAddress = sre@terminus.com
+CN = *.{{ env['ENVOY_DOMAIN'] }}

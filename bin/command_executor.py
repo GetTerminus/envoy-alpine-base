@@ -18,7 +18,7 @@ def main(args):
     data = sys.stdin.read(int(headers['len'])) # read the event payload
     res = subprocess.call(args, stdout=sys.stderr); # don't mess with real stdout
     write_stderr(data)
-    write_stdout('RESULT 2\nOK') # transition from READY to ACKNOWLEDGED
+    write_stdout('RESULT 2\nOK') # transition from BUSY to ACKNOWLEDGED
 
 if __name__ == '__main__':
     main(sys.argv[1:])

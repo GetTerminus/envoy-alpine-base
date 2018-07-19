@@ -57,7 +57,8 @@ See http://supervisord.org/configuration.html#program-x-section-settings for mor
     * It is important to include a listener for your application. The listener will call a script to stop Supervisord should your application be unable to run. This will allow the container to exit if an error is encountered.
     * Supervisor does not support starting a program after another has finished. In order to work around this, create a listener to listen for `PROCESS_STATE_EXITED` on a program that calls the start command for the next program. An example of this can be found in [envoy.ini](etc/supervisor/conf.d/envoy.ini)
 
-3. Create a config file for envoy named `etc/envoy/envoy.yaml.j2`. This file will be interpolated using Jinja2 and written out as `etc/envoy/envoy.yaml`
+3. Create a config file for envoy named `etc/envoy/envoy.yaml.j2`. This file will be interpolated using Jinja2 and written out as `etc/envoy/envoy.yaml`.</br>
+   For more information about configuring Envoy, [read the docs](https://www.envoyproxy.io/docs/envoy/v1.7.0/).
 
 4. Update your Dockerfile to use the [envoy-alpine-base container](https://hub.docker.com/r/getterminus/envoy-alpine-base/)
     ``` Dockerfile

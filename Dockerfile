@@ -10,8 +10,6 @@ ENV ENVOY_LOG_LEVEL warn
 # install requisite packages
 RUN apk --no-cache add \
     bind-tools \
-    ca-certificates \
-    openssl \
     python \
     py-pip \
     tini \
